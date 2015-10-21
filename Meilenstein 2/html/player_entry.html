@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="de">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+ <h2>Willkommen</h2>
+<form id ="player_entry" name="playerentry" action="http://martinakraus.net/createPlayer.php">
+    <div>
+    <label for="vorname">Vorname:</label>
+    <input type="text" id="vorname" name="vorname" />
+    </div>
+    <div>
+        <label for="nachname">Nachname:</label>
+        <input type="text" id="nachname" name="name" />
+    </div>
+    <div>
+        <label for="verein">Verein:</label>
+        <input type="text" id="verein" name="verein" />
+    </div>
+    <div>
+        <label for="hcoach">Headcoach:</label>
+        <input type="text" id="hcoach" name="hcoach" />
+    </div>
+    <div>
+        <label for="acoach">Assistant Coach:</label>
+        <input type="text" id="acoach" name="acoach" />
+    </div>
+    <div>
+        <label for="aktiv">Aktiv:</label>
+        <input type="checkbox" id="aktiv" name="aktiv" value="Ja"/> Ja
+        <input type="checkbox" name="aktiv" value="Nein" checked/> Nein
+    </div>
+    <div>
+        <label>Position:</label>
+        <select name="position">
+        <option value="center">Center</option>
+        <option value="guard">Guard</option>
+        <option value="pforward">Power Forward</option>
+        <option value="wing" selected>Wing</option>
+        <option value="sforward">Small Forward</option>
+        </select>
+    </div>
+    <div>
+        <label for="number">Rückennummer:</label>
+        <input type="number" id="number" name="number" />
+    </div>
+    <div>
+        <label for="jahr">Geburtsjahr:</label>
+        <input type="number" id="jahr" name="jahr" />
+    </div>
+    <div>
+        <label for="favorit">Favorit markieren:</label>
+        <input type="checkbox" id="favorit" name="favorit" />
+    </div>
+
+
+    <button type="submit" name="action" value="submit">Senden</button>
+
+ </form>
+</body>
+</html>
