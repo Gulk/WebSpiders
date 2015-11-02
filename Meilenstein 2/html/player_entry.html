@@ -2,60 +2,70 @@
 <html>
 <head lang="de">
     <meta charset="UTF-8">
+
     <link rel="stylesheet"
           type="text/css"
           href="../css/main.css"/>
+
     <title>Spieler anlegen</title>
 </head>
 <body>
+
+
 <div class="inner">
- <h2 id="title">Spieler anlegen</h2>
-<form id ="player_entry" name="playerentry" action="http://martinakraus.net/createPlayer.php">
-    <div id="main">
-    <div id="fav">
-        <label for="favorit">Favorit markieren:</label>
-        <input class="what" type="checkbox" id="favorit" name="favorit" />
-    </div>
-    <div>
-    <label for="vorname">Vorname:</label>
-    <input type="text" id="vorname" name="vorname" />
+    <h2 id="title">Spieler anlegen</h2>
 
-        <label for="nachname">Nachname:</label>
-        <input type="text" id="nachname" name="name" />
+    <form id="player_entry" name="playerentry" action="http://martinakraus.net/createPlayer.php">
+        <div id="main">
+            <div id="fav">
+                <label for="favorit">Favorit markieren:</label>
+                <input class="what" type="checkbox" id="favorit" name="favorit"/>
+            </div>
+            <div>
+                <label for="vorname">Vorname:</label>
+                <input type="text" id="vorname" name="vorname"/>
 
-        <label for="verein">Verein:</label>
-        <input type="text" id="verein" name="verein" />
+                <label for="nachname">Nachname:</label>
+                <input type="text" id="nachname" name="name"/>
 
-        <label for="hcoach">Headcoach:</label>
-        <input type="text" id="hcoach" name="hcoach" />
+                <label for="verein">Verein:</label>
+                <input type="text" id="verein" name="verein"/>
 
-        <label for="acoach">Assistant Coach:</label>
-        <input type="text" id="acoach" name="acoach" />
+                <label for="hcoach">Headcoach:</label>
+                <input type="text" id="hcoach" name="hcoach"/>
 
-        <label for="number">Rückennummer:</label>
-        <input type="number" id="number" name="number" />
+                <label for="acoach">Assistant Coach:</label>
+                <input type="text" id="acoach" name="acoach"/>
 
-        <label for="jahr">Geburtsjahr:</label>
-        <input type="number" id="jahr" name="jahr" />
-        <label>Position:</label>
-        <select id="sel" name="position">
-            <option value="center">Center</option>
-            <option value="guard">Guard</option>
-            <option value="pforward">Power Forward</option>
-            <option value="wing" selected>Wing</option>
-            <option value="sforward">Small Forward</option>
-        </select>
-        <label>Aktiv:</label>
-        <div>
-        <input id="yes" type="checkbox" name="aktiv" value="Ja"/> Ja
-        <input id="no" type="checkbox" name="aktiv" value="Nein" checked/>Nein
-    </div>
-    </div>
+                <label for="number">Rückennummer:</label>
+                <input type="number" id="number" name="number"/>
+
+                <label for="jahr">Geburtsjahr:</label>
+                <input type="number" id="jahr" name="jahr"/>
+                <label>Position:</label>
+                <select id="sel" name="position">
+                    <option value="center">Center</option>
+                    <option value="guard">Guard</option>
+                    <option value="pforward">Power Forward</option>
+                    <option value="wing" selected>Wing</option>
+                    <option value="sforward">Small Forward</option>
+                </select>
+                <label>Aktiv:</label>
+
+                <div>
+                    <input id="yes" type="checkbox" name="aktiv" value="Ja"/> Ja
+                    <input id="no" type="checkbox" name="aktiv" value="Nein" checked/>Nein
+                </div>
+            </div>
 
 
-    <button id="submit" type="submit" name="action" value="submit">Senden</button>
-    </div>
- </form>
+            <button id="submit" type="submit" name="action" value="submit">Senden</button>
+        </div>
+    </form>
+
 </div>
+
+
 </body>
+</html>
 </html>
