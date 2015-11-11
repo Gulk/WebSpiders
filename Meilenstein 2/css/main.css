@@ -60,7 +60,7 @@ label {
 
 input {
     float: left;
-    margin: 1%;
+    margin: 2%;
 }
 
 #main {
@@ -69,23 +69,29 @@ input {
 
 #sel {
     float: left;
-    margin: 1%;
+    margin: 2%;
     width: 172px;
 }
 
 .aktiva{
     float: left;
     width: 70px;
+    margin: 1%;
 }
 
 #submit {
     float: left;
-    margin-top: 5%;
+    margin: 5%;
+}
+
+.left-part{
+    float: left;
+    width: 45vh;
 }
 
 #fav {
     float: left;
-    margin-left: 10%;
+    margin-left: 5%;
     font-size: 12px;
 }
 
