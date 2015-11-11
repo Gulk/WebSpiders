@@ -6,7 +6,7 @@
     <link rel="stylesheet"
           type="text/css"
           href="../css/main.css"/>
-
+    <script type="text/javascript" language="JavaScript" src="../js/formValidation.js"></script>
     <title>Spieler anlegen</title>
 </head>
 <body>
@@ -17,14 +17,9 @@
 
     <form id="player_entry" name="playerentry" onsubmit="return validateForm()" action="http://martinakraus.net/createPlayer.php">
         <div id="main">
-            <div>
+            <div class="left-part">
                 <label for="vorname">Vorname:</label>
                 <input type="text" id="vorname" name="vorname"/>
-
-                <div id="fav">
-                    <label for="favorit">Favorit markieren:</label>
-                    <input class="what" type="checkbox" id="favorit" name="favorit" value="Ja"/>
-                </div>
 
                 <label for="nachname">Nachname:</label>
                 <input type="text" id="nachname" name="name"/>
@@ -54,112 +49,19 @@
                 <label for="aktiv">Aktiv:</label>
 
                 <div id="aktiv">
-                    <span class="aktiva"><input type="checkbox" name="aktiv" value="Ja"/> Ja </span>
-                    <span class="aktiva"><input type="checkbox" name="aktiv" value="Nein" checked/> Nein </span>
+                    <span  class="aktiva"><input type="checkbox" name="aktiv" value="Ja"/> Ja </span>
+                    <span  class="aktiva"><input type="checkbox" name="aktiv" value="Nein" checked/> Nein </span>
                 </div>
+                <button id="submit" type="submit" name="action" value="submit">Senden</button>
             </div>
-
-
-            <button id="submit" type="submit" name="action" value="submit">Senden</button>
+            <div id="fav">
+                <label for="favorit">Favorit markieren:</label>
+                <input class="what" type="checkbox" id="favorit" name="favorit" value="Ja"/>
+            </div>
         </div>
     </form>
 
 </div>
-
-
-<script type="text/javascript">
-
-    // document.getElementById("submit").addEventListener("click", validateForm); // OnClickListener Submit-Button
-
-
-    function validateForm() {
-
-        var vorname = containsOnlyLetters(document.playerentry.vorname);
-        var nachname = containsOnlyLetters(document.playerentry.nachname);
-        var verein = containsOnlyLetters(document.playerentry.verein);
-        var hcoach = containsOnlyLetters(document.playerentry.hcoach);
-        var acoach = containsOnlyLetters(document.playerentry.acoach);
-
-        var number = containsOnlyNumbersInRange(document.playerentry.number, 4, 15);
-        var jahr = containsOnlyNumbersInRange(document.playerentry.jahr, 0, 2015);
-
-        if (!(vorname && nachname && verein && hcoach && acoach && number && jahr)) {
-            alert("Einige Eingaben sind fehlerhaft. Bitte überprüfen Sie ihre Eingaben");
-
-            // reverse order because of focus
-            if (!jahr) {
-                addBoarder(document.playerentry.jahr, "#FF0000")
-            } else {
-                removeBoarder(document.playerentry.jahr);
-            }
-            if (!number) {
-                addBoarder(document.playerentry.number, "#FF0000")
-            } else {
-                removeBoarder(document.playerentry.number);
-            }
-            if (!acoach) {
-                addBoarder(document.playerentry.acoach, "#FF0000")
-            } else {
-                removeBoarder(document.playerentry.acoach);
-            }
-            if (!hcoach) {
-                addBoarder(document.playerentry.hcoach, "#FF0000")
-            } else {
-                removeBoarder(document.playerentry.hcoach);
-            }
-            if (!verein) {
-                addBoarder(document.playerentry.verein, "#FF0000")
-            } else {
-                removeBoarder(document.playerentry.verein);
-            }
-            if (!nachname) {
-                addBoarder(document.playerentry.nachname, "#FF0000")
-            } else {
-                removeBoarder(document.playerentry.nachname);
-            }
-            if (!vorname) {
-                addBoarder(document.playerentry.vorname, "#FF0000")
-            } else {
-                removeBoarder(document.playerentry.vorname);
-            }
-
-            return false;
-        } else {
-            return true;
-        }
-
-
-    }
-
-    function addBoarder(element, color) {
-        element.style.border = "solid " + color;
-        element.focus();
-    }
-
-    function removeBoarder(element) {
-        element.style.border = "none";
-    }
-
-    function containsOnlyLetters(element) {
-        return containsOnly(element, /^[A-Za-z]+$/);
-    }
-
-    function containsOnlyNumbers(element) {
-        return containsOnly(element, /^[0-9]+$/);
-    }
-
-    function containsOnlyNumbersInRange(element, minNumber, maxNumer) {
-        if (containsOnlyNumbers(element)) {
-            return (element.value <= maxNumer && element.value >= minNumber);
-        }
-    }
-
-    function containsOnly(element, regEx) {
-        return element.value.match(regEx);
-    }
-
-
-</script>
 
 </body>
 </html>
