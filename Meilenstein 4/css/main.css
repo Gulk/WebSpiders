@@ -100,3 +100,39 @@ input {
     color: rgb(75, 47, 37);
     font-size: 24px;
 }
+
+.all_players{
+    display: block;
+    margin-left: 1%;
+    border: solid 2px;
+    font-size: 20px;
+    float: left;
+    width: 48%;
+}
+
+.selected{
+    background-color: rgb(0,38,255);
+    color: #FFFFFF;
+    border-color: #000000;
+}
+
+#my_fav{
+    display: block;
+    border: solid 2px;
+    font-size: 20px;
+    float: right;
+    color: black;
+    width: 48%;
+    margin-right: 2.3%;
+}
+
+table{
+    margin-left: 1%;
+    font-size: 12px;
+    border-collapse: collapse;
+    width: 96.7%;
+}
+
+#col_title{
+    font-size: 14px;
+}

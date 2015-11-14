@@ -1,55 +1,34 @@
-<!DOCTYPE html>
-<html>
-<head lang="de">
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
     <meta charset="UTF-8">
-
     <link rel="stylesheet"
           type="text/css"
           href="../css/main.css"/>
-
+    <title>Meine Favoriten</title>
     <script type="text/javascript" language="JavaScript" src="../js/playerDetails.js"></script>
-
-    <title>Spieler anlegen</title>
 </head>
 <body>
-
-
 <div class="inner">
     <h2 id="title">Meine Spieler</h2>
+    <div class = "all_players selected"  onclick="return updateTable()">Alle Spieler </div>
+    <div id = "my_fav" onclick="return updateTable()"> Meine Favoriten </div>
 
-    <div>Alle Spieler</div>
-    <div>Meine Favoriten</div>
-
-    <script type="text/javascript">
-        manipuliere();
-    </script>
-
-
-    <style>
-        table {
-            border-collapse: collapse;
-        }
-
-        table, th, td {
-            border: 2px solid black;
-        }
-    </style>
-
-    <table>
-        <tr>
-            <th>Spieler (Vor und Nachname</th>
-            <th>Verein</th>
-            <th>Headcoach</th>
-            <th>Assistantcoach</th>
-            <th>Position</th>
-            <th>Aktiv</th>
-            <th>Rückennummer</th>
-            <th>Geburtsjahr</th>
-        </tr>
+    <div class="table">
+    <table border="2">
+    <tr id ="col_title">
+        <td> Spieler</td>
+        <td>Verein</td>
+        <td>Headcoach</td>
+        <td>Assistantcoach</td>
+        <td>Position</td>
+        <td>Aktiv</td>
+        <td>Rückennummer</td>
+        <td>Geburtsjahr</td>
+    </tr>
     </table>
+    </div>
 
 </div>
-
 </body>
-</html>
 </html>
