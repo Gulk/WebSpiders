@@ -9,10 +9,10 @@
     <script type="text/javascript" language="JavaScript" src="../js/playerDetails.js"></script>
 </head>
 <body>
-<div class="inner">
+<div class="inner detailsite">
     <h2 id="title">Meine Spieler</h2>
-    <div class = "all_players selected"  onclick="return updateTable()">Alle Spieler </div>
-    <div id = "my_fav" onclick="return updateTable()"> Meine Favoriten </div>
+    <div id="allplayers" class = "divtab selected"  onclick="updateTable('all')">Alle Spieler </div>
+    <div id="myfav" class = "divtab" onclick="updateTable('fav')"> Meine Favoriten </div>
 
     <div class="table">
     <table border="2">

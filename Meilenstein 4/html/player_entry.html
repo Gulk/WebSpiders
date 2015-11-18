@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="de">
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet"
+          type="text/css"
+          href="../css/main.css"/>
+    <script type="text/javascript" language="JavaScript" src="../js/formValidation.js"></script>
+    <title>Spieler anlegen</title>
+</head>
+<body>
+
+
+<div class="inner">
+    <h2 id="title">Spieler anlegen</h2>
+
+    <form id="player_entry" name="playerentry" onsubmit="return validateForm()" action="http://martinakraus.net/createPlayer.php">
+        <div id="main">
+            <div class="left-part">
+                <label for="vorname">Vorname:</label>
+                <input type="text" id="vorname" name="vorname"/>
+
+                <label for="nachname">Nachname:</label>
+                <input type="text" id="nachname" name="name"/>
+
+                <label for="verein">Verein:</label>
+                <input type="text" id="verein" name="verein"/>
+
+                <label for="hcoach">Headcoach:</label>
+                <input type="text" id="hcoach" name="hcoach"/>
+
+                <label for="acoach">Assistant Coach:</label>
+                <input type="text" id="acoach" name="acoach"/>
+
+                <label for="number">Rückennummer:</label>
+                <input type="number" id="number" name="number"/>
+
+                <label for="jahr">Geburtsjahr:</label>
+                <input type="number" id="jahr" name="jahr"/>
+                <label for="sel">Position:</label>
+                <select id="sel" name="position">
+                    <option value="center">Center</option>
+                    <option value="guard">Guard</option>
+                    <option value="pforward">Power Forward</option>
+                    <option value="wing" selected>Wing</option>
+                    <option value="sforward">Small Forward</option>
+                </select>
+                <label for="aktiv">Aktiv:</label>
+
+                <div id="aktiv">
+                    <span  class="aktiva"><input type="checkbox" name="aktiv" value="Ja"/> Ja </span>
+                    <span  class="aktiva"><input type="checkbox" name="aktiv" value="Nein" checked/> Nein </span>
+                </div>
+                <button class="button" type="submit" name="action" value="submit">Senden</button>
+                <button class="button" type="button" name="action" value="back" onclick="history.go(-1);return true;">Zum Hauptmenü</button>
+            </div>
+            <div id="fav">
+                <label for="favorit">Favorit markieren:</label>
+                <input class="what" type="checkbox" id="favorit" name="favorit" value="Ja"/>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+</body>
+</html>
+</html>

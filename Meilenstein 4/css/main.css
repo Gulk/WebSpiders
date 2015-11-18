@@ -45,7 +45,7 @@ body {
 }
 
 form {
-    font-family: Arial Black;
+    color: black;
     padding-left: 3%;
     font-size: 16px;
 }
@@ -79,7 +79,7 @@ input {
     margin: 1%;
 }
 
-#submit {
+.button {
     float: left;
     margin: 5%;
 }
@@ -101,13 +101,13 @@ input {
     font-size: 24px;
 }
 
-.all_players{
+.divtab{
     display: block;
-    margin-left: 1%;
+    border-collapse: separate;
     border: solid 2px;
     font-size: 20px;
     float: left;
-    width: 48%;
+    width: 47.7%;
 }
 
 .selected{
@@ -116,23 +116,23 @@ input {
     border-color: #000000;
 }
 
-#my_fav{
-    display: block;
-    border: solid 2px;
-    font-size: 20px;
-    float: right;
-    color: black;
-    width: 48%;
-    margin-right: 2.3%;
-}
-
 table{
-    margin-left: 1%;
+    float: left;
     font-size: 12px;
     border-collapse: collapse;
     width: 96.7%;
+    display: table;
+}
+
+td{
+    width: 12%;
 }
 
 #col_title{
     font-size: 14px;
+}
+
+.detailsite{
+    overflow-x: auto;
+    padding-left: 2%;
 }

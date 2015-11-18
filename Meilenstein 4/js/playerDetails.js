@@ -3,10 +3,10 @@ var request = new XMLHttpRequest();
 
 function manipuliere() {
 
-    // URL fürRequest festlegen
+    // URL fï¿½rRequest festlegen
     request.open("GET", "http://martinakraus.net/data.json");   // request.status = 0 ???
 
-    // URL fürRequest festlegen
+    // URL fï¿½rRequest festlegen
     request.onreadystatechange = callbackHandler;
 
     // Request abschicken
@@ -32,3 +32,22 @@ function callbackHandler() {
 function createHTMLTable(myObj) {
     // TODO convert Player to HTML
 }
+
+function updateTable(source){
+    if(source === "all"){
+        var allPlayers = document.getElementById("allplayers");
+        var nameOfClass = allPlayers.className;
+        var classArray = nameOfClass.split(" ");
+        if(classArray.length == 1){
+            allPlayers.className += "selected";
+            alert(nameOfClass);
+        }else{
+
+        }
+
+    }else{
+        var myfavourite = document.getElementById("myfav");
+    }
+
+}
+
