@@ -11,23 +11,16 @@
 <body>
 <div class="inner detailsite">
     <h2 id="title">Meine Spieler</h2>
-    <div id="allplayers" class = "divtab selected"  onclick="updateTable('all')">Alle Spieler </div>
-    <div id="myfav" class = "divtab" onclick="updateTable('fav')"> Meine Favoriten </div>
 
-    <div class="table">
-    <table border="2">
-    <tr id ="col_title">
-        <td> Spieler</td>
-        <td>Verein</td>
-        <td>Headcoach</td>
-        <td>Assistantcoach</td>
-        <td>Position</td>
-        <td>Aktiv</td>
-        <td>Rückennummer</td>
-        <td>Geburtsjahr</td>
-    </tr>
-    </table>
-    </div>
+    <div id="allplayers" class="divtab selected" onclick="updateTable('all')">Alle Spieler</div>
+    <div id="myfav" class="divtab" onclick="updateTable('fav')"> Meine Favoriten</div>
+
+    <div id="jsTable"></div>
+
+
+    <script type="text/javascript">
+        manipuliere();
+    </script>
 
 </div>
 </body>
