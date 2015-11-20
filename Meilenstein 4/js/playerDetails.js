@@ -21,6 +21,12 @@ function callbackHandler() {
     }
 }
 
+//<script type="text/javascript" language="JavaScript" src="../js/playerDetails.js"></script>
+/*<script type="text/javascript">
+    manipuliere();
+</script>
+    */
+
 function createHTMLTable(jSonArray) {
 
     var result = "<table> <tr> <th>Spieler</th> <th>Verein</th> <th>Headcoach</th> <th>Assistantcoach</th> <th>Position</th> <th>Aktiv</th> <th>R&uumlckennummer</th> <th>Geburtsjahr</th> </tr>";
