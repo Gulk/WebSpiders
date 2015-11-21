@@ -6,14 +6,14 @@
           type="text/css"
           href="../css/main.css"/>
     <title>Meine Favoriten</title>
-    <script type="text/javascript" language="JavaScript" src="../js/playerDetailsNew.js"></script>
+    <script type="text/javascript" language="JavaScript" src="../js/playerDetails.js"></script>
 </head>
-<body onload="tableload()">
+<body onload="loadTable()">
 <div class="inner detailsite">
     <h2 id="title">Meine Spieler</h2>
 
-    <div id="allplayers" class="divtab selected" onclick="updateTabs('all')">Alle Spieler</div>
-    <div id="myfav" class="divtab" onclick="updateTabs('fav')"> Meine Favoriten</div>
+    <div id="allplayers" class="divtab selected" onclick="showAllPlayer()">Alle Spieler</div>
+    <div id="myfav" class="divtab" onclick="showFavPlayer()"> Meine Favoriten</div>
 
     <table id="playertable">
         <tr id="col_title">
@@ -27,7 +27,7 @@
             <th>Geburtsjahr</th>
         </tr>
     </table>
-    <button class="button" type="button" name="action" value="back" onclick="history.go(-1);return true;">Zum Hauptmenü</button>
+    <button class="button" value="back" name="return" onclick="location.href = 'home.html'">Zum Hauptmenü</button>
 </div>
 </body>
 </html>
