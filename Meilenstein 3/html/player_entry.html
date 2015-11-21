@@ -15,7 +15,7 @@
 <div class="inner">
     <h2 id="title">Spieler anlegen</h2>
 
-    <form id="player_entry" name="playerentry" onsubmit="return validateForm()" action="http://martinakraus.net/createPlayer.php">
+    <form id="player_entry" name="playerentry" action="http://martinakraus.net/createPlayer.php" method="get">
         <div id="main">
             <div class="left-part">
                 <label for="vorname">Vorname:</label>
@@ -52,7 +52,7 @@
                     <span  class="aktiva"><input type="checkbox" name="aktiv" value="Ja"/> Ja </span>
                     <span  class="aktiva"><input type="checkbox" name="aktiv" value="Nein" checked/> Nein </span>
                 </div>
-                <button id="submit" type="submit" name="action" value="submit">Senden</button>
+                <button id="submit" type="submit" name="action" value="submit" onclick="return validateForm()">Senden</button>
             </div>
             <div id="fav">
                 <label for="favorit">Favorit markieren:</label>

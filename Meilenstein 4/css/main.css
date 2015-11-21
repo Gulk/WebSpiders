@@ -140,3 +140,7 @@ td{
     overflow-x: auto;
     padding-left: 2%;
 }
+
+.button{
+    float: left;
+}
