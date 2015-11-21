@@ -1,5 +1,4 @@
 var element = document.getElementById('submit');
-element.addEventListener('click', validateForm);
 
 function validateForm() {
 
@@ -17,8 +16,8 @@ function validateForm() {
         validateCorrectLetters(verein.value) &&
         validateCorrectLetters(headcoach.value) &&
         validateCorrectLetters(assistcoach.value) &&
-        validateCorrectNumbers(jahr.value) &&
-        validateCorrectNumbers(nummer.value))) {
+        validateCorrectNumbers(jahr.value, "jahr") &&
+        validateCorrectNumbers(nummer.value, "nummer"))) {
         alert("Einige Eingaben sind fehlerhaft. Bitte überprüfen Sie ihre Eingaben");
 
         if (!validateCorrectLetters(vorname.value)) {
@@ -55,14 +54,14 @@ function validateForm() {
         } else {
             markBorder(assistcoach, "none");
         }
-        if (!validateCorrectNumbers(jahr.value)) {
+        if (!validateCorrectNumbers(jahr.value, "jahr")) {
             markBorder(jahr, "#FF0000");
             if (getsFocus === "non")
                 getsFocus = jahr;
         } else {
             markBorder(jahr, "none");
         }
-        if (!validateCorrectNumbers(nummer.value)) {
+        if (!validateCorrectNumbers(nummer.value, "nummer")) {
             markBorder(nummer, "#FF0000");
             if (getsFocus === "non")
                 getsFocus = nummer;
@@ -81,11 +80,11 @@ function validateCorrectLetters(textfield) {
     return textfield.match(/^[A-Za-zÄ-Üä-ü]+$/);
 }
 
-function validateCorrectNumbers(numberfield) {
-    if (numberfield === jahr) {
-        return numberfield.match(/^[0 < 2015]+$/);
+function validateCorrectNumbers(fieldValue,numberFieldType) {
+    if (numberFieldType === "jahr") {
+        return fieldValue.match(/[0 < 2015]+$/);
     } else {
-        return numberfield.match(/^[4 < 15]+$/);
+        return fieldValue.match(/^[4 < 15]+$/);
     }
 }
 
