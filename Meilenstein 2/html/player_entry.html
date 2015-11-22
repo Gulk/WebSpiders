@@ -6,7 +6,7 @@
     <link rel="stylesheet"
           type="text/css"
           href="../css/main.css"/>
-
+    <script type="text/javascript" language="JavaScript" src="../js/formValidation.js"></script>
     <title>Spieler anlegen</title>
 </head>
 <body>
@@ -17,15 +17,12 @@
 
     <form id="player_entry" name="playerentry" action="http://martinakraus.net/createPlayer.php" method="get">
         <div id="main">
-            <div>
+            <div class="left-part">
                 <label for="vorname">Vorname:</label>
                 <input type="text" id="vorname" name="vorname"/>
-                <div id="fav">
-                    <label for="favorit">Favorit markieren:</label>
-                    <input class="what" type="checkbox" id="favorit" name="favorit" value="Ja"/>
-                </div>
+
                 <label for="nachname">Nachname:</label>
-                <input type="text" id="nachname" name="name"/>
+                <input type="text" id="nachname" name="nachname"/>
 
                 <label for="verein">Verein:</label>
                 <input type="text" id="verein" name="verein"/>
@@ -54,18 +51,30 @@
                 <div id="aktiv">
                     <span  class="aktiva"><input type="checkbox" name="aktiv" value="Ja"/> Ja </span>
                     <span  class="aktiva"><input type="checkbox" name="aktiv" value="Nein" checked/> Nein </span>
-                    </div>
+                </div>
+                <button class="button" type="submit" name="action" value="submit" onclick="return validateForm()">Senden</button>
+            </div>
+
+            <div class="right-part">
+                <div id="fav">
+                    <label for="favorit">Als Favorit markieren:</label>
+                    <input class="what" type="checkbox" id="favorit" name="favorit" value="Ja"/>
+                </div>
             </div>
 
 
-            <button id="submit" type="submit" name="action" value="submit">Senden</button>
+
         </div>
     </form>
+
+
+    <div class="btnHauptMenu">
+        <button class="button" onclick="location.href = 'home.html'">Zum Hauptmenü</button>
+    </div>
+
+
 </div>
 
-
 </body>
-<footer>
-</footer>
 </html>
 </html>

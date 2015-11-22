@@ -22,7 +22,7 @@
                 <input type="text" id="vorname" name="vorname"/>
 
                 <label for="nachname">Nachname:</label>
-                <input type="text" id="nachname" name="name"/>
+                <input type="text" id="nachname" name="nachname"/>
 
                 <label for="verein">Verein:</label>
                 <input type="text" id="verein" name="verein"/>
@@ -52,14 +52,26 @@
                     <span  class="aktiva"><input type="checkbox" name="aktiv" value="Ja"/> Ja </span>
                     <span  class="aktiva"><input type="checkbox" name="aktiv" value="Nein" checked/> Nein </span>
                 </div>
-                <button id="submit" type="submit" name="action" value="submit" onclick="return validateForm()">Senden</button>
+                <button class="button" type="submit" name="action" value="submit" onclick="return validateForm()">Senden</button>
             </div>
-            <div id="fav">
-                <label for="favorit">Favorit markieren:</label>
-                <input class="what" type="checkbox" id="favorit" name="favorit" value="Ja"/>
+
+            <div class="right-part">
+                <div id="fav">
+                    <label for="favorit">Als Favorit markieren:</label>
+                    <input class="what" type="checkbox" id="favorit" name="favorit" value="Ja"/>
+                </div>
             </div>
+
+
+
         </div>
     </form>
+
+
+    <div class="btnHauptMenu">
+        <button class="button" onclick="location.href = 'home.html'">Zum Hauptmenü</button>
+    </div>
+
 
 </div>
 
