@@ -28,18 +28,18 @@
                 <input type="text" id="verein" name="verein"/>
 
                 <label for="hcoach">Headcoach:</label>
-                <input type="text" id="hcoach" name="hcoach"/>
+                <input type="text" id="hcoach" name="Headcoach"/>
 
                 <label for="acoach">Assistant Coach:</label>
-                <input type="text" id="acoach" name="acoach"/>
+                <input type="text" id="acoach" name="Assistant Coach"/>
 
                 <label for="number">Rückennummer:</label>
-                <input type="number" id="number" name="number"/>
+                <input type="number" id="number" name="Rückennummer"/>
 
                 <label for="jahr">Geburtsjahr:</label>
-                <input type="number" id="jahr" name="jahr"/>
+                <input type="number" id="jahr" name="Geburtsjahr"/>
                 <label for="sel">Position:</label>
-                <select id="sel" name="position">
+                <select id="sel" name="Position">
                     <option value="center">Center</option>
                     <option value="guard">Guard</option>
                     <option value="pforward">Power Forward</option>
@@ -49,11 +49,11 @@
                 <label for="aktiv">Aktiv:</label>
 
                 <div id="aktiv">
-                    <span class="aktiva"><input type="checkbox" name="aktiv" value="Ja"/> Ja </span>
-                    <span class="aktiva"><input type="checkbox" name="aktiv" value="Nein" checked/> Nein </span>
+                    <span class="aktiva"><input type="checkbox" name="Aktiv" value="Ja"/> Ja </span>
+                    <span class="aktiva"><input type="checkbox" name="Aktiv" value="Nein" checked/> Nein </span>
                 </div>
                 <div id="btnSubmit">
-                    <button class="button" type="submit" name="action" value="submit">
+                    <button class="button" type="submit" name="action" value="submit" onclick="return validateForm()">
                         Senden
                     </button>
                 </div>
@@ -62,7 +62,7 @@
             <div class="right-part">
                 <div id="fav">
                     <label for="favorit" id="favoritLabel">Als Favorit markieren:</label>
-                    <input class="what" type="checkbox" id="favorit" name="favorit" value="Ja"/>
+                    <input type="checkbox" id="favorit" name="Favorit markieren" value="Ja"/>
                 </div>
             </div>
 
