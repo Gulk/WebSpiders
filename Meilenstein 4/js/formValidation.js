@@ -1,91 +1,101 @@
 var element = document.getElementById('submit');
 element.addEventListener('click', validateForm);
 
+var vorname;
+var nachname;
+var verein;
+var headcoach;
+var assistcoach;
+var nummer;
+var jahr;
+
+var getsFocus;
+
 function validateForm() {
 
-    var vorname = document.playerentry.vorname;
-    var name = document.playerentry.name;
-    var verein = document.playerentry.verein;
-    var headcoach = document.playerentry.hcoach;
-    var assistcoach = document.playerentry.acoach;
-    var jahr = document.playerentry.jahr;
-    var nummer = document.playerentry.number;
-    var getsFocus = "non";
+    vorname = document.getElementById("vorname");
+    nachname = document.getElementById("nachname");
+    verein = document.getElementById("verein");
+    headcoach = document.getElementById("hcoach");
+    assistcoach = document.getElementById("acoach");
+    nummer = document.getElementById("number");
+    jahr = document.getElementById("jahr");
+    getsFocus = null;
 
-    if (!(validateCorrectLetters(vorname.value) &&
-        validateCorrectLetters(name.value) &&
-        validateCorrectLetters(verein.value) &&
-        validateCorrectLetters(headcoach.value) &&
-        validateCorrectLetters(assistcoach.value) &&
-        validateCorrectNumbers(jahr.value) &&
-        validateCorrectNumbers(nummer.value))) {
+    if (!allInputsAreValid()) {
         alert("Einige Eingaben sind fehlerhaft. Bitte überprüfen Sie ihre Eingaben");
 
-        if (!validateCorrectLetters(vorname.value)) {
-            markBorder(vorname, "#FF0000");
-            getsFocus = vorname;
-        } else {
-            markBorder(vorname, "none");
-        }
-        if (!validateCorrectLetters(name.value)) {
-            markBorder(name, "#FF0000");
-            if (getsFocus === "non")
-                getsFocus = name;
-        } else {
-            markBorder(name, "none");
-        }
-        if (!validateCorrectLetters(verein.value)) {
-            markBorder(verein, "#FF0000");
-            if (getsFocus === "non")
-                getsFocus = verein;
-        } else {
-            markBorder(verein, "none");
-        }
-        if (!validateCorrectLetters(headcoach.value)) {
-            markBorder(headcoach, "#FF0000");
-            if (getsFocus === "non")
-                getsFocus = headcoach;
-        } else {
-            markBorder(headcoach, "none");
-        }
-        if (!validateCorrectLetters(assistcoach.value)) {
-            markBorder(assistcoach, "#FF0000");
-            if (getsFocus === "non")
-                getsFocus = assistcoach;
-        } else {
-            markBorder(assistcoach, "none");
-        }
-        if (!validateCorrectNumbers(jahr.value)) {
-            markBorder(jahr, "#FF0000");
-            if (getsFocus === "non")
-                getsFocus = jahr;
-        } else {
-            markBorder(jahr, "none");
-        }
-        if (!validateCorrectNumbers(nummer.value)) {
-            markBorder(nummer, "#FF0000");
-            if (getsFocus === "non")
-                getsFocus = nummer;
-        } else {
-            markBorder(nummer, "none");
-        }
-        getsFocus.focus();
-        getsFocus = "non";
+        textValidator(vorname);
+        textValidator(nachname);
+        textValidator(verein);
+        textValidator(headcoach);
+        textValidator(assistcoach);
+
+        numberValidator(nummer, validateCorrectPlayerNumber(nummer.value));
+        numberValidator(jahr, validateCorrectYearNumber(jahr.value));
+
+        focusForm();
+
         return false;
     } else {
         return true;
     }
 }
 
-function validateCorrectLetters(textfield) {
-    return textfield.match(/^[A-Za-zÄ-Üä-ü]+$/);
+function focusForm() {
+    if (getsFocus != null) {
+        getsFocus.focus();
+        getsFocus = null;
+    }
 }
 
-function validateCorrectNumbers(numberfield) {
-    if (numberfield === jahr) {
-        return numberfield.match(/^[0 < 2015]+$/);
+function allInputsAreValid() {
+    return (validateCorrectLetters(vorname.value) && validateCorrectLetters(nachname.value) &&
+    validateCorrectLetters(verein.value) && validateCorrectLetters(headcoach.value) &&
+    validateCorrectLetters(assistcoach.value) && validateCorrectPlayerNumber(nummer.value) &&
+    validateCorrectYearNumber(jahr.value));
+}
+
+function textValidator(field) {
+    if (!validateCorrectLetters(field.value)) {
+        markBorder(field, "#FF0000");
+        if (getsFocus == null) {
+            getsFocus = field;
+        }
+
     } else {
-        return numberfield.match(/^[4 < 15]+$/);
+        markBorder(field, "none");
+    }
+}
+
+function numberValidator(field, isCorrect) {
+    if (!isCorrect) {
+        markBorder(field, "#FF0000");
+        if (getsFocus == null) {
+            getsFocus = field;
+        }
+    } else {
+        markBorder(field, "none");
+    }
+}
+
+function validateCorrectLetters(textfieldValue) {
+    return regEx(textfieldValue.match(/^[A-Za-zÄÖÜäöüß]+$/));
+}
+
+function validateCorrectPlayerNumber(numberfieldValue) {
+    return regEx(numberfieldValue.match(/^([4-9]|1[0-5])$/)); // 4-9, 10-15
+}
+
+function validateCorrectYearNumber(numberfieldValue) {
+    return regEx(numberfieldValue.match(/^([0-9]|[0-9][0-9]|[0-9][0-9][0-9]|200[0-9]|201[0-5])$/)); // 0-2015
+}
+
+function regEx(regResult) {
+    if (regResult == null) {
+        return false;
+    } else {
+        return true;
     }
 }
 
