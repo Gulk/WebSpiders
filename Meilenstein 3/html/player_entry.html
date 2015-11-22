@@ -49,29 +49,24 @@
                 <label for="aktiv">Aktiv:</label>
 
                 <div id="aktiv">
-                    <span  class="aktiva"><input type="checkbox" name="aktiv" value="Ja"/> Ja </span>
-                    <span  class="aktiva"><input type="checkbox" name="aktiv" value="Nein" checked/> Nein </span>
+                    <span class="aktiva"><input type="checkbox" name="aktiv" value="Ja"/> Ja </span>
+                    <span class="aktiva"><input type="checkbox" name="aktiv" value="Nein" checked/> Nein </span>
                 </div>
-                <button class="button" type="submit" name="action" value="submit" onclick="return validateForm()">Senden</button>
+                <button class="button" type="submit" name="action" value="submit" onclick="return validateForm()">
+                    Senden
+                </button>
             </div>
 
             <div class="right-part">
                 <div id="fav">
-                    <label for="favorit">Als Favorit markieren:</label>
+                    <label for="favorit" id="favoritLabel">Als Favorit markieren:</label>
                     <input class="what" type="checkbox" id="favorit" name="favorit" value="Ja"/>
                 </div>
             </div>
 
 
-
         </div>
     </form>
-
-
-    <div class="btnHauptMenu">
-        <button class="button" onclick="location.href = 'home.html'">Zum Hauptmenü</button>
-    </div>
-
 
 </div>
 

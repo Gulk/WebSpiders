@@ -80,13 +80,15 @@ input {
     margin: 1%;
 }
 
-.button {
+#btnSubmit{
     float: left;
     margin: 5%;
 }
 
 .btnHauptMenu {
     clear: both;
+    float: left;
+    margin-left: 5%;
 }
 
 .left-part {
@@ -99,7 +101,16 @@ input {
     width: 45%;
 }
 
+#favoritLabel{
+    width: 100%;
+}
+
+#favorit{
+    width: 20px;
+}
+
 #fav {
+    display: block;
     width: 100%;
     float: left;
     margin-left: 5%;
