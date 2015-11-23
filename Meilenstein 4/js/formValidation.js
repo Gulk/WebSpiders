@@ -101,8 +101,10 @@ function regEx(regResult) {
 
 function markBorder(victim, colour) {
     if (colour === "none") {
-        victim.style.border = colour;
+        victim.style.boxShadow = "";
+        // victim.style.border = colour;
     } else {
-        victim.style.border = "solid" + colour;
+        victim.style.boxShadow = "0 0 0 2px #FF0000 inset";
+        // victim.style.border = "solid" + colour;
     }
 }
