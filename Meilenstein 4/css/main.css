@@ -50,8 +50,11 @@ form {
     font-size: 16px;
 }
 
-label {
+.floating-left{
     float: left;
+}
+
+label {
     clear: left;
     width: 49%;
     text-align: left;
@@ -59,7 +62,6 @@ label {
 }
 
 input {
-    float: left;
     width: 40%;
     margin: 2%;
 }
@@ -69,35 +71,29 @@ input {
 }
 
 #sel {
-    float: left;
     margin: 2%;
     width: 40%;
 }
 
 .aktiva {
-    float: left;
     width: 20%;
     margin: 1%;
 }
 
 #btnSubmit{
-    float: left;
     margin: 5%;
 }
 
 .btnHauptMenu {
     clear: both;
-    float: left;
     margin-left: 5%;
 }
 
 .left-part {
-    float: left;
     width: 55%;
 }
 
 .right-part {
-    float: left;
     width: 45%;
 }
 
@@ -112,7 +108,6 @@ input {
 #fav {
     display: block;
     width: 100%;
-    float: left;
     margin-left: 5%;
     font-size: 12px;
 }
@@ -126,7 +121,6 @@ input {
 .divtab {
     box-shadow: 0 0 0 2px black inset;
     font-size: 20px;
-    float: left;
     width: 50%;
 }
 
@@ -137,7 +131,6 @@ input {
 }
 
 table {
-    float: left;
     font-size: 12px;
     border-collapse: collapse;
     display: table;
