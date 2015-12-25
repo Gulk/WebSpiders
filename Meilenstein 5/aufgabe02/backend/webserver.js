@@ -23,7 +23,7 @@ http.createServer(function (req, res) {
                 post.acoach + ', ' + post.position + ", " + post.number + '\n';
 
 
-            fs.appendFile('players.txt', writeToFile, function (err) {
+            fs.appendFile('form.txt', writeToFile, function (err) {
                 if (err) throw err;
             });
 
