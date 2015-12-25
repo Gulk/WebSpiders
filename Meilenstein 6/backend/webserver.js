@@ -1,41 +1,57 @@
 var http = require('http');
 var qs = require('querystring');
 var fs = require('fs');
+var express = require('express');
+var app = express();
 
+/**
+ * REST - get all players
+ */
+app.get('/AllPlayers', function (req, res) {
+    fs.readFile("player.json", 'utf8', function (err, data) {
+        if (err) throw err;
+        res.end(data);
+    });
+})
 
-const hostname = '127.0.0.1';
-const port = 1337;
+/**
+ * REST - get favorite players
+ */
+app.get('/Favorites', function (req, res) {
+    fs.readFile("player.json", 'utf8', function (err, data) {
+        if (err) throw err;
 
+        var resultJSON = [];
+        var jSonArray = JSON.parse(data);
 
-http.createServer(function (req, res) {
+        for (var i = 0; i < jSonArray.length; i++) {
+            if (jSonArray[i].isFavorite) {
 
-    if (req.method == 'POST') {
-        var body = '';
+                resultJSON.push({
+                    "_id"           : jSonArray[i]._id,
+                    "isActive"      : jSonArray[i].isActive,
+                    "isFavorite"    : jSonArray[i].isFavorite,
+                    "year"          : jSonArray[i].year,
+                    "number"        : jSonArray[i].number,
+                    "firstname"     : jSonArray[i].firstname,
+                    "surname"       : jSonArray[i].surname,
+                    "headcoach"     : jSonArray[i].headcoach,
+                    "asisstantcoach": jSonArray[i].asisstantcoach,
+                    "team"          : jSonArray[i].team,
+                    "position"      : jSonArray[i].position
 
-        req.on('data', function (data) {
-            body += data;
-        });
+                });
 
-        req.on('end', function () {
+            }
+        }
 
-            var post = qs.parse(body);
-            var writeToFile = post.vorname + ' ' + post.name + ', ' + post.jahr + ', ' + post.hcoach + ', ' +
-                post.acoach + ', ' + post.position + ", " + post.number + '\n';
+        res.end(JSON.stringify(resultJSON));
+    });
+})
 
+var server = app.listen(1337, function () {
+    var host = server.address().address;
+    var port = server.address().port;
 
-            fs.appendFile('form.txt', writeToFile, function (err) {
-                if (err) throw err;
-            });
-
-
-            res.writeHead(200, {'Content-Type': 'text/plain'});
-            res.end("POST was successful");
-        });
-
-    } else {
-        res.writeHead(405, {'Content-Type': 'text/plain'});
-        res.end("Method Not Allowed");
-    }
-
-
-}).listen(port, hostname);
+    console.log('Example app listening at http://%s:%s', host, port);
+});
