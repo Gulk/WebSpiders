@@ -1,6 +1,3 @@
-var element = document.getElementById('submit');
-element.addEventListener('click', validateForm);
-
 var vorname;
 var nachname;
 var verein;

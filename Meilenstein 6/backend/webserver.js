@@ -4,7 +4,6 @@ var fs = require('fs');
 var express = require('express');
 var app = express();
 
-
 /**
  * REST - get all players
  */
@@ -15,7 +14,7 @@ app.get('/AllPlayers', function (req, res) {
         res.setHeader('Access-Control-Allow-Origin', '*'); // fix XMLHttpRequest cannot load
         res.end(data);
     });
-})
+});
 
 /**
  * REST - get favorite players
@@ -51,7 +50,28 @@ app.get('/Favorites', function (req, res) {
         res.setHeader('Access-Control-Allow-Origin', '*'); // fix XMLHttpRequest cannot load
         res.end(JSON.stringify(resultJSON));
     });
-})
+});
+
+
+/**
+ * REST - add Player
+ */
+app.put('/Player', function (req, res) {
+
+    console.log("PUT");
+
+    var writeToFile = req.body.vorname + ' ' + req.body.name + ', ' + req.body.jahr + ', ' + req.body.hcoach + ', ' +
+        req.body.acoach + ', ' + req.body.position + ", " + req.body.number + '\n';
+
+
+    fs.appendFile('form.txt', writeToFile, function (err) {
+        if (err) throw err;
+    });
+
+    res.setHeader('Access-Control-Allow-Origin', '*'); // fix XMLHttpRequest cannot load
+    res.end("Player added");
+});
+
 
 var server = app.listen(1337, function () {
     var host = server.address().address;
