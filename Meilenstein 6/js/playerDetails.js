@@ -1,10 +1,23 @@
 var request = new XMLHttpRequest();
 var jSonArray;
 
-function loadTable() {
-    request.open("GET", "../data/data.json", true);
+function showAllPlayer() {
+
+    selectAllPlayer();
+
+    request.open("GET", "http://127.0.0.1:1337/AllPlayers", true);
     request.onreadystatechange = callbackHandler;
     request.send();
+}
+
+function showFavPlayer() {
+
+    selectFav();
+
+    request.open("GET", "http://127.0.0.1:1337/Favorites", true);
+    request.onreadystatechange = callbackHandler;
+    request.send();
+
 }
 
 function callbackHandler() {
@@ -39,17 +52,7 @@ function booleanToTextConverter(isTrue) {
     }
 }
 
-function showAllPlayer() {
-    selectAllPlayer();
-    renderFavOnly(false);
 
-}
-
-function showFavPlayer() {
-    selectFav();
-    renderFavOnly(true);
-
-}
 
 function selectFav() {
     document.getElementById("myfav").classList.add("selected");
@@ -59,19 +62,4 @@ function selectFav() {
 function selectAllPlayer() {
     document.getElementById("allplayers").classList.add("selected");
     document.getElementById("myfav").classList.remove("selected");
-}
-
-
-function renderFavOnly(favOnly) {
-    var rows = document.getElementById("playertable").rows;
-
-    for (var i = 0; i <= jSonArray.length; i++) {
-        if (!jSonArray[i].isFavorite) {
-            if (favOnly) {
-                rows[i + 1].style.display = 'none';
-            } else {
-                rows[i + 1].style.display = '';
-            }
-        }
-    }
 }

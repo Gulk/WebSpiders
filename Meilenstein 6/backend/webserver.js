@@ -4,12 +4,15 @@ var fs = require('fs');
 var express = require('express');
 var app = express();
 
+
 /**
  * REST - get all players
  */
 app.get('/AllPlayers', function (req, res) {
     fs.readFile("player.json", 'utf8', function (err, data) {
         if (err) throw err;
+
+        res.setHeader('Access-Control-Allow-Origin', '*'); // fix XMLHttpRequest cannot load
         res.end(data);
     });
 })
@@ -45,6 +48,7 @@ app.get('/Favorites', function (req, res) {
             }
         }
 
+        res.setHeader('Access-Control-Allow-Origin', '*'); // fix XMLHttpRequest cannot load
         res.end(JSON.stringify(resultJSON));
     });
 })
