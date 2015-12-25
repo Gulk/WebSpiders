@@ -54,13 +54,13 @@ function validateForm() {
             // Laut Meileinstein 5 bruacht man nur
             // "Vorname Name, Jahrgang, Headcoach, Assistantcoach, Position, Trikotnummer"
 
-            vorname: vorname,
-            name: nachname,
-            jahr: jahr,
-            hcoach: headcoach,
-            acoach: assistcoach,
+            vorname: vorname.value,
+            name: nachname.value,
+            jahr: jahr.value,
+            hcoach: headcoach.value,
+            acoach: assistcoach.value,
             position: playerPos[playerPos.selectedIndex].value,
-            number: nummer
+            number: nummer.value
         }));
 
 

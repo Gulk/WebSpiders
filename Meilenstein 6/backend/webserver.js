@@ -2,7 +2,24 @@ var http = require('http');
 var qs = require('querystring');
 var fs = require('fs');
 var express = require('express');
+var bodyParser = require('body-parser');
 var app = express();
+
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
+
+// Fix for XMLHttpRequest
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Methods", "GET, PUT");
+
+    next();
+});
 
 /**
  * REST - get all players
@@ -11,7 +28,6 @@ app.get('/AllPlayers', function (req, res) {
     fs.readFile("player.json", 'utf8', function (err, data) {
         if (err) throw err;
 
-        res.setHeader('Access-Control-Allow-Origin', '*'); // fix XMLHttpRequest cannot load
         res.end(data);
     });
 });
@@ -47,7 +63,6 @@ app.get('/Favorites', function (req, res) {
             }
         }
 
-        res.setHeader('Access-Control-Allow-Origin', '*'); // fix XMLHttpRequest cannot load
         res.end(JSON.stringify(resultJSON));
     });
 });
@@ -60,6 +75,8 @@ app.put('/Player', function (req, res) {
 
     console.log("PUT");
 
+    console.log(req.body);
+
     var writeToFile = req.body.vorname + ' ' + req.body.name + ', ' + req.body.jahr + ', ' + req.body.hcoach + ', ' +
         req.body.acoach + ', ' + req.body.position + ", " + req.body.number + '\n';
 
@@ -68,7 +85,6 @@ app.put('/Player', function (req, res) {
         if (err) throw err;
     });
 
-    res.setHeader('Access-Control-Allow-Origin', '*'); // fix XMLHttpRequest cannot load
     res.end("Player added");
 });
 
