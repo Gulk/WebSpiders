@@ -8,6 +8,7 @@ var headcoach;
 var assistcoach;
 var nummer;
 var jahr;
+var playerPos;
 
 var getsFocus;
 
@@ -20,6 +21,8 @@ function validateForm() {
     assistcoach = document.getElementById("acoach");
     nummer = document.getElementById("number");
     jahr = document.getElementById("jahr");
+    playerPos = document.getElementById("sel");
+
     getsFocus = null;
 
     if (!allInputsAreValid()) {
@@ -38,6 +41,32 @@ function validateForm() {
 
         return false;
     } else {
+
+        var request = new XMLHttpRequest();
+        request.open("PUT", "http://127.0.0.1:1337/Player", true);
+        request.setRequestHeader('Content-Type', 'application/json');
+
+        request.onload = function () {
+            if ((request.readyState == 4) && (request.status == 200) && (request.responseText != null)) {
+                alert(request.responseText);
+            }
+        };
+
+        request.send(JSON.stringify({
+
+            // Laut Meileinstein 5 bruacht man nur
+            // "Vorname Name, Jahrgang, Headcoach, Assistantcoach, Position, Trikotnummer"
+
+            vorname: vorname,
+            name: nachname,
+            jahr: jahr,
+            hcoach: headcoach,
+            acoach: assistcoach,
+            position: playerPos[playerPos.selectedIndex].value,
+            number: nummer
+        }));
+
+
         return true;
     }
 }

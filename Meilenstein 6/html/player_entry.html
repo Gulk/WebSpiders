@@ -15,7 +15,7 @@
 <div class="inner">
     <h2 id="title">Spieler anlegen</h2>
 
-    <form id="player_entry" name="playerentry" action="http://localhost:1337/" method="post">
+    <form id="player_entry" name="playerentry">
         <div id="main">
             <div class="left-part floating-left">
                 <label class="floating-left" for="vorname">Vorname:</label>
@@ -52,11 +52,6 @@
                     <span class="aktiva floating-left"><input class="floating-left" type="checkbox" name="aktiv" value="true"/> Ja </span>
                     <span class="aktiva floating-left"><input class="floating-left" type="checkbox" name="aktiv" value="false" checked/> Nein </span>
                 </div>
-                <div class="floating-left" id="btnSubmit">
-                    <button class="button" type="submit" name="action" value="submit" onclick="return validateForm()">
-                        Senden
-                    </button>
-                </div>
             </div>
 
             <div class="right-part floating-left">
@@ -70,6 +65,7 @@
         </div>
     </form>
     <div class="btnHauptMenu floating-left">
+        <button class="button" name="action" value="submit" onclick="return validateForm()">Senden</button>
         <button class="button" onclick="location.href = 'home.html'">Zum Hauptmenü</button>
     </div>
 
