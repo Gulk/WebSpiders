@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="de">
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet"
+          type="text/css"
+          href="../css/main.css"/>
+    <script type="text/javascript" language="JavaScript" src="../js/formValidation.js"></script>
+    <title>Spieler anlegen</title>
+</head>
+<body>
+
+
+<div class="inner">
+    <h2 id="title">Spieler anlegen</h2>
+
+    <form id="player_entry" name="playerentry" action="http://martinakraus.net/createPlayer.php" method="get">
+        <div id="main">
+            <div class="left-part floating-left">
+                <label class="floating-left" for="vorname">Vorname:</label>
+                <input class="floating-left" type="text" id="vorname" name="vorname"/>
+
+                <label class="floating-left" for="nachname">Nachname:</label>
+                <input class="floating-left" type="text" id="nachname" name="name"/>
+
+                <label class="floating-left" for="verein">Verein:</label>
+                <input class="floating-left" type="text" id="verein" name="verein"/>
+
+                <label class="floating-left" for="hcoach">Headcoach:</label>
+                <input class="floating-left" type="text" id="hcoach" name="hcoach"/>
+
+                <label class="floating-left" for="acoach">Assistant Coach:</label>
+                <input class="floating-left" type="text" id="acoach" name="acoach"/>
+
+                <label class="floating-left" for="number">Rückennummer:</label>
+                <input class="floating-left" type="number" id="number" name="number"/>
+
+                <label class="floating-left" for="jahr">Geburtsjahr:</label>
+                <input class="floating-left" type="number" id="jahr" name="jahr"/>
+                <label class="floating-left" for="sel">Position:</label>
+                <select class="floating-left" id="sel" name="position">
+                    <option value="Center">Center</option>
+                    <option value="Guard">Guard</option>
+                    <option value="Power Forward">Power Forward</option>
+                    <option value="Wing" selected>Wing</option>
+                    <option value="Small Forward">Small Forward</option>
+                </select>
+                <label class="floating-left" for="aktiv">Aktiv:</label>
+
+                <div id="aktiv">
+                    <span class="aktiva floating-left"><input class="floating-left" type="checkbox" name="aktiv" value="true"/> Ja </span>
+                    <span class="aktiva floating-left"><input class="floating-left" type="checkbox" name="aktiv" value="false" checked/> Nein </span>
+                </div>
+                <div class="floating-left" id="btnSubmit">
+                    <button class="button" type="submit" name="action" value="submit" onclick="return validateForm()">
+                        Senden
+                    </button>
+                </div>
+            </div>
+
+            <div class="right-part floating-left">
+                <div class="floating-left" id="fav">
+                    <label class="floating-left" for="favorit" id="favoritLabel">Als Favorit markieren:</label>
+                    <input class="floating-left" type="checkbox" id="favorit" name="favorit" value="true"/>
+                </div>
+            </div>
+
+
+        </div>
+    </form>
+    <div class="btnHauptMenu floating-left">
+        <button class="button" onclick="location.href = 'home.html'">Zum Hauptmenü</button>
+    </div>
+
+</div>
+
+</body>
+</html>
+</html>
