@@ -29,8 +29,15 @@ function callbackHandler() {
 
 function populateTable() {
 
+    var table = document.getElementById("playertable");
+
+    var rowCount = table.rows.length;
+    while(--rowCount) {
+        table.deleteRow(rowCount);
+    }
+
     for (var i = 0; i < jSonArray.length; i++) {
-        var table = document.getElementById("playertable");
+
         var row = table.insertRow(i + 1);
 
         row.insertCell(0).innerHTML = jSonArray[i].firstname + " " + jSonArray[i].surname;
