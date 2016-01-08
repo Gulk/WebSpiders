@@ -110,11 +110,15 @@ function validateCorrectLetters(textfieldValue) {
 }
 
 function validateCorrectPlayerNumber(numberfieldValue) {
-    return regEx(numberfieldValue.match(/^([4-9]|1[0-5])$/)); // 4-9, 10-15
+    return (3 < numberfieldValue && numberfieldValue < 16); // 4-15
 }
 
 function validateCorrectYearNumber(numberfieldValue) {
-    return regEx(numberfieldValue.match(/^([0-9]|[0-9][0-9]|[0-9][0-9][0-9]|200[0-9]|201[0-5])$/)); // 0-2015
+    var aktuellesJahr = new Date().getFullYear();
+    if (numberfieldValue == '' || (numberfieldValue < 0 && numberfieldValue > aktuellesJahr))
+        return false;
+    else
+        return true;// 0-2015
 }
 
 function regEx(regResult) {
