@@ -1,0 +1,159 @@
+body {
+    background-color: rgb(0, 162, 232);
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.inner {
+    overflow: hidden;
+    background-color: rgb(153, 217, 234);
+    text-align: center;
+    height: 100vh;
+}
+
+.ueberschrift {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.highlightRED {
+    color: rgb(136, 0, 21);
+}
+
+.box {
+    margin: auto;
+    padding: 1%;
+    width: 30%;
+    background-color: rgb(63, 72, 204);
+    font-weight: bold;
+}
+
+.hrefNoUnderline {
+    text-decoration: none;
+}
+
+.boxbutton {
+    color: black;
+    background-color: rgb(0, 162, 232);
+    font-size: 18px;
+}
+
+.boxbutton:hover {
+    background-color: rgb(63, 72, 204);
+}
+
+form {
+    color: black;
+    padding-left: 3%;
+    font-size: 16px;
+}
+
+.floating-left{
+    float: left;
+}
+
+label {
+    clear: left;
+    width: 49%;
+    text-align: left;
+    margin: 2%;
+}
+
+input {
+    width: 40%;
+    margin: 2%;
+}
+
+#main {
+    margin-top: 10%;
+}
+
+#sel {
+    margin: 2%;
+    width: 40%;
+}
+
+.aktiva {
+    width: 20%;
+    margin: 1%;
+}
+
+#btnSubmit{
+    margin: 5%;
+}
+
+.btnHauptMenu {
+    clear: both;
+    margin-left: 5%;
+}
+
+.left-part {
+    width: 55%;
+}
+
+.right-part {
+    width: 45%;
+}
+
+#favoritLabel{
+    width: 100%;
+}
+
+#favorit{
+    width: 20px;
+}
+
+#fav {
+    display: block;
+    width: 100%;
+    margin-left: 5%;
+    font-size: 12px;
+}
+
+#title {
+    text-align: center;
+    color: rgb(75, 47, 37);
+    font-size: 24px;
+}
+
+.divtab {
+    box-shadow: 0 0 0 2px black inset;
+    font-size: 20px;
+    width: 50%;
+}
+
+.selected {
+    background-color: rgb(0, 38, 255);
+    color: #FFFFFF;
+    border-color: #000000;
+}
+
+table {
+    font-size: 12px;
+    border-collapse: collapse;
+    display: table;
+}
+
+#playertable {
+    width: 100%
+}
+
+table, th, td {
+    border: 2px solid black;
+}
+
+td {
+    width: 12%;
+}
+
+#col_title {
+    font-size: 14px;
+}
+
+.detailsite {
+    overflow-x: auto;
+    padding-left: 2%;
+    padding-right: 2%;
+}

@@ -1,0 +1,4 @@
+Vorname Name, Jahrgang, Headcoach, Assistantcoach, Position, Trikotnummer
+Martina Kraus, 1990, Harald, Ali, Center, 14
+Christoph Martens, 1987, Bisa, Knosp, Wing, 13
+Thomas Smits, 1980, Pika, chu, Guard, 11
