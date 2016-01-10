@@ -63,6 +63,13 @@ function validateForm() {
             number: nummer.value
         }));
 
+        markBorder(vorname, "none");
+        markBorder(nachname, "none");
+        markBorder(verein, "none");
+        markBorder(headcoach, "none");
+        markBorder(assistcoach, "none");
+        markBorder(nummer, "none");
+        markBorder(jahr, "none");
 
         return true;
     }
@@ -114,11 +121,14 @@ function validateCorrectPlayerNumber(numberfieldValue) {
 }
 
 function validateCorrectYearNumber(numberfieldValue) {
+    /*
     var aktuellesJahr = new Date().getFullYear();
     if (numberfieldValue == '' || (numberfieldValue < 0 && numberfieldValue > aktuellesJahr))
         return false;
     else
-        return true;// 0-2015
+        return true;// 0-
+        */
+    return regEx(numberfieldValue.match(/^([0-9]|[0-9][0-9]|[0-9][0-9][0-9]|1[0-9][0-9][0-9]|200[0-9]|201[0-6])$/)); // 0-2015
 }
 
 function regEx(regResult) {
