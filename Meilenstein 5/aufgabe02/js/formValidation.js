@@ -86,7 +86,7 @@ function validateCorrectPlayerNumber(numberfieldValue) {
 
 function validateCorrectYearNumber(numberfieldValue) {
     var aktuellesJahr = new Date().getFullYear();
-    if (numberfieldValue == '' || (numberfieldValue < 0 && numberfieldValue > aktuellesJahr))
+    if ((numberfieldValue < 0 || numberfieldValue > aktuellesJahr) || numberfieldValue == '')
         return false;
     else
         return true;// 0-2015

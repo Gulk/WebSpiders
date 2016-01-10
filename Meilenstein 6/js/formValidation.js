@@ -121,14 +121,11 @@ function validateCorrectPlayerNumber(numberfieldValue) {
 }
 
 function validateCorrectYearNumber(numberfieldValue) {
-    /*
     var aktuellesJahr = new Date().getFullYear();
-    if (numberfieldValue == '' || (numberfieldValue < 0 && numberfieldValue > aktuellesJahr))
+    if ((numberfieldValue < 0 || numberfieldValue > aktuellesJahr) || numberfieldValue == '')
         return false;
     else
-        return true;// 0-
-        */
-    return regEx(numberfieldValue.match(/^([0-9]|[0-9][0-9]|[0-9][0-9][0-9]|1[0-9][0-9][0-9]|200[0-9]|201[0-6])$/)); // 0-2015
+        return true;// 0-2015
 }
 
 function regEx(regResult) {
